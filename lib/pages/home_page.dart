@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps_flutter/pages/direction_screen.dart';
+import 'package:maps_flutter/pages/infinite_scrooling/infinite_scrool.dart';
 import 'package:maps_flutter/pages/maps_screen.dart';
 import 'package:maps_flutter/pages/picker_screen.dart';
 
@@ -15,6 +16,7 @@ class _HomePageState extends State<HomePage> {
     "Maps Screen",
     "Picker Screen",
     "Direction Screen",
+    "Infinite Scrooling",
   ];
   int _index = 0;
 
@@ -48,6 +50,7 @@ class _HomePageState extends State<HomePage> {
           MapsScreen(),
           PickerScreen(),
           DirectionScreen(),
+          InfiniteScrollingPage(),
         ],
       ),
     );

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:maps_flutter/provider/api_provider.dart';
+import 'package:maps_flutter/services/api_service.dart';
 import 'package:maps_flutter/services/direction_service.dart';
 import 'package:maps_flutter/services/picker_service.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +21,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => PickerServiceScreen()),
         ChangeNotifierProvider(create: (context) => DirectionService()),
+        ChangeNotifierProvider(
+          create: (context) => ApiProvider(
+            ApiService(
+              Client(),
+            ),
+          ),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
